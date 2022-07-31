@@ -1,0 +1,32 @@
+{% extends 'admin/adminbase.html' %}
+{% block content %}
+
+
+
+<div class="contact">
+    <div class="container">
+        <div class="contact-head" style="border: 1px solid; border-radius: 20px; height: 400px; padding-top: 30px;">
+             <h2>Add Category</h2>
+             <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                 <div class="col-md-6 contact-left">
+                  
+                   <input type="text" class="text" name="categoryname" placeholder="Category" required>
+                   <b style="color: #87655B;">Upload Image</b> <input type="file" class="text" name="image1" placeholder="category....." required>
+                   <input type="submit" class="abcd" value="ADD" style="margin-left: 480px; width: 150px;height: 30px;border: none; border-radius: 10px; padding-top: 0px; box-shadow: 0 0 10px 3px #4a4a4a ;"/>
+                </div>
+               
+                      
+               
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        		 
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

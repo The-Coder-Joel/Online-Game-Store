@@ -1,0 +1,47 @@
+{% extends 'user/userbase.html' %}
+{% block content %}
+
+
+
+
+<div class="review">
+    <div class="container">
+        <h2 style="color: #69d2e8;" >Products</h2>
+        <div class="review-md1">
+            {% for i in data %}
+                <div class="col-md-4 sed-md">
+                     <div class=" col-1" style="height: 500px;">
+                        <a href="/payment?pid={{i.0}}"><img class="img-responsive" src="../static{{i.5}}" alt=""></a>
+                        <h4><a href="/payment?pid={{i.0}}">{{i.1}}</h4>
+                      <p>{{i.3}} </BR>
+                       <font color="blue"> price:-{{i.4}}</font></BR><br>
+                       <font color="red" size=4px> Buy Now </font>
+                    </p></a>
+                    </div>
+                </div>
+                {% endfor %}
+               
+
+               
+                
+                <div class="clearfix"> </div>
+        </div>
+        
+
+
+
+        
+    
+
+
+
+       
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

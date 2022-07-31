@@ -1,0 +1,44 @@
+{% extends 'user/userbase.html' %}
+{% block content %}
+
+
+
+
+<div class="review">
+    <div class="container">
+        <h2 style="color: #69d2e8;">Categories</h2>
+        <div class="review-md1">
+            {% for i in data %}
+                <div class="col-md-4 sed-md">
+                     <div class=" col-1" style="height: 300px;">
+                        <a href="/viewgames?category={{i.1}}"><img class="img-responsive" src="../static{{i.2}}" alt=""></a>
+                        <h4><a href="/viewgames?category={{i.1}}">{{i.1}}</a></h4>
+                      
+                    </div><br><br><br><br>
+                </div>
+                {% endfor %}
+               
+
+               
+                
+                <div class="clearfix"> </div>
+        </div>
+        
+
+
+
+        
+    
+
+
+
+       
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

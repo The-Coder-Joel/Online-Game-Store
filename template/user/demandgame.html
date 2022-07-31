@@ -1,0 +1,45 @@
+{% extends 'user/userbase.html' %}
+{% block content %}
+
+
+
+
+
+
+<div class="contact">
+    <div class="container">
+        <div class="contact-head" style="border: 1px solid; border-radius: 20px; margin-top: 50px; padding-top: 30px;">
+             <h2>Demand A Game</h2>
+             <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                 <div class="col-md-6 contact-left">
+                  
+                   <input type="text" class="text" name="productname" placeholder=" Game Name " required>
+                   <select name="category">
+                       <option>Select The Category</option>
+                       {% for i in data %}
+                       <option value="{{i.1}}">{{i.1}}</option>
+                       {% endfor %}
+                   </select>
+
+
+
+                   <input type="text" class="text" name="discription" placeholder=" Description " required>
+                 
+                 <input type="submit" value="SEND" style="margin-left: 500px; width: 150px; box-shadow: 0 0 10px 3px #4a4a4a ;height: 30px;border: none; border-radius: 10px; padding-top: 0px;"/>
+                </div>
+               
+                      
+               
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        		 
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

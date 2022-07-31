@@ -1,0 +1,98 @@
+{% extends 'user/userbase.html' %}
+{% block content %}
+
+
+
+
+
+
+<div class="contact">
+    <div class="container">
+        <div class="contact-head" style="border: 1px solid; border-radius: 20px; margin-top: 80px; padding-top: 30px;">
+             <h2>Chat With Group</h2>
+             <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                 <div class="col-md-6 contact-left">
+                  
+                  
+                   <select name="game">
+                       <option>Select Your Game</option>
+                       {% for i in data %}
+                       <option value="{{i.1}}">{{i.1}}</option>
+                       {% endfor %}
+                   </select>
+                 
+                 <input type="submit" value="SEARCH" style="margin-left: 500px; width: 150px; box-shadow: 0 0 10px 3px #4a4a4a ;height: 30px;border: none; border-radius: 10px; padding-top: 0px;"/>
+                </div>
+               
+                      
+               
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        		 
+    </div>
+</div>
+
+
+<style>
+    
+
+    .customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+      }
+      
+      .customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      
+      .customers tr:nth-child(even){background-color: #f2f2f2;}
+      
+      .customers tr:hover {background-color: #ddd;}
+      
+      td{
+      background-color: #fff;
+      }
+
+      .customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #54B6F4;
+        color: white;
+      }
+      
+    </style>
+    <form>
+    
+        <br>
+        <h2 align="center" style="color: #54B6F4; margin-top: 150px;"> Most Asked Questions </h2>
+        <br>
+        <table width="1200"  border="1.5" align="center" class="customers">
+            <tr><th style="text-align: center;">Game</th><th style="text-align: center;">Question</th><th style="text-align: center;">Help </th></tr>
+          <tr>
+              {% for i in data2 %}
+           
+                          <td>
+                            {{i.2}}
+                                      </td>
+                                      <td>
+                                        {{i.3}}
+                                                  </td>
+                                                  
+                                                              <td>
+                                                               <a href="/answeraq?id={{i.0}}">answer</a>
+                                                                          </td>
+                                                            
+          </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        </form>
+
+
+{% endblock %}

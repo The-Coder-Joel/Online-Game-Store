@@ -1,0 +1,75 @@
+{% extends 'admin/adminbase.html' %}
+{% block content %}
+<style>
+    
+
+.customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 80%;
+  }
+  
+  .customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  .customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  td{
+    background-color: #fff;
+  }
+  
+  .customers tr:hover {background-color: #ddd;}
+  
+  .customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #54B6F4;
+	color: white;
+  }
+  
+</style>
+<form>
+
+    <br>
+    <h2 align="center" style="color: #fff;"> Payment Details</h2>
+    <br>
+    <table width="1200" border="1.5" align="center" class="customers">
+        <tr><th style="text-align: center;">Product Name	</th><th style="text-align: center;"> Category </th><th style="text-align: center;"> Amount</th><th style="text-align: center;">	Date</th><th style="text-align: center;">Name</th><th style="text-align: center;">	Address</th><th style="text-align: center;">	Moblie	</th><th style="text-align: center;">E-mail</th></tr>
+      <tr>
+          {% for i in data %}
+          <td>
+{{i.1}}
+          </td>
+          <td>
+            {{i.2}}
+                      </td>
+                      
+                            <td>
+                                {{i.12}}
+                                      </td>
+                                        <td>
+                                           {{i.13}}
+                                              </td>
+                                              <td>
+                                                {{i.15}}
+                                                          </td>
+                                                          <td>
+                                                            {{i.16}}
+                                                                      </td>
+                                                                      
+                                                                          <td>
+                                                                              {{i.18}}
+                                                                                  </td>
+                                                                                        <td>
+                                                                                           {{i.19}}
+                                                                                                </td>
+      </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <br>
+    </form>
+    {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'user/userbase.html' %}
+{% block content %}
+
+
+
+
+
+
+<div class="contact">
+    <div class="container">
+        <div class="contact-head" style="border: 1px solid; border-radius: 20px; margin-top: 80px; padding-top: 30px;">
+             <h2>Chat With Group</h2>
+             <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                 <div class="col-md-6 contact-left">
+                  
+                  
+                   <select name="game">
+                       <option>Select Your Game</option>
+                       {% for i in data %}
+                       <option value="{{i.1}}">{{i.1}}</option>
+                       {% endfor %}
+                   </select>
+                   <input type="text" class="text" name="question" placeholder="Add Your Question" required>
+                 <input type="submit" value="SEND" style="margin-left: 500px; width: 150px; box-shadow: 0 0 10px 3px #4a4a4a ;height: 30px;border: none; border-radius: 10px; padding-top: 0px;"/>
+                </div>
+               
+                      
+               
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        		 
+    </div>
+</div>
+
+
+{% endblock %}

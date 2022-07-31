@@ -1,0 +1,35 @@
+{% extends 'common/commonbase.html' %}
+{% block content %}
+
+
+
+
+
+
+<div class="contact">
+    <div class="container">
+        <div class="contact-head" style="border: 1px solid;border-radius: 20px;background-color: #fff; height: 400px; padding-top: 50px;">
+             <h2> LOGIN </h2>
+             <form method="post">
+                {% csrf_token %}
+                 <div class="col-md-6 contact-left">
+                  
+                   <input type="text" class="text" name="uname" placeholder=" E-mail " required>
+                   <input type="password" class="text" name="password" placeholder=" Password " required>
+                   <input type="submit" value="LOGIN" style="margin-left: 480px; width: 150px; box-shadow: 0 0 10px 3px #4a4a4a ;height: 30px;border: none; border-radius: 10px; padding-top: 0px;"/>
+                 </div>
+               
+                      
+               
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        		 
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
